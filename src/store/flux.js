@@ -35,7 +35,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       fetchPrices: async (name, slug, year) => {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/causes/findByTag?tagsArray=${slug}&year=2015`
+            `http://localhost:5000/api/causes/findByTag?tagsArray=${slug}&year=${year}`
           );
           const data = await res.json();
           setStore({
@@ -63,7 +63,7 @@ const getState = ({ getStore, getActions, setStore }) => {
                 },
               ],
             },
-            chartName: name,
+            chart: {name, year},
           });
         } catch (error) {
           throw error
