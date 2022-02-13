@@ -38,9 +38,6 @@ const getState = ({ getStore, getActions, setStore }) => {
             `http://localhost:5000/api/causes/findByTag?tagsArray=${slug}&year=2015`
           );
           const data = await res.json();
-          console.log(data);
-          console.log(data.map((value) => value.septicemia));
-
           setStore({
             chartData: {
               labels: [
@@ -69,7 +66,7 @@ const getState = ({ getStore, getActions, setStore }) => {
             chartName: name,
           });
         } catch (error) {
-          console.log(error);
+          throw error
         }
       },
     },
