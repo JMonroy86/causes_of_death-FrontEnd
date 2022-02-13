@@ -16,7 +16,8 @@ export const Home = () => {
           <Row>
             <Col md={12} className="border-bottom chart">
               <Col md={12} className="ps-2 py-4">
-                <h4>{store.chartName}</h4>
+                <h4>{store.chart?.name}</h4>
+                <h6 className="text-muted">{store.chart?.year}</h6>
               </Col>
               <DynamicChart />
             </Col>
