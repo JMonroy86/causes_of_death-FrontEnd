@@ -15,12 +15,11 @@ export const Favorites = () => {
                 key={tag.id}
                 md={12}
                 className="px-5 py-2  search-item-result"
-                onClick={() => actions.remove_from_favorite(tag)}
               >
                 <Row>
-                  <Col md={10}>{tag.name}</Col>
+                  <Col md={10} onClick={()=> actions.fetchPrices(tag.name, tag.slug)}>{tag.name}</Col>
                   <Col md={2}>
-                    <img src="../img/fav.png" className="img-fluid" alt="" />
+                    <img src="../img/fav.png" className="img-fluid" alt="" onClick={() => actions.remove_from_favorite(tag)}/>
                   </Col>
                 </Row>
               </Col>
