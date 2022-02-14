@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               `${process.env.REACT_APP_API_URL}/api/search/tag?name=${criteria}`
             );
             const data = await response.json();
-            setStore({ search_tags_result: data });
+            setStore({ search_tags_result: data, db_data: "ok" });
           } else {
             setStore({ search_tags_result: null });
           }
