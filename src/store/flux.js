@@ -9,7 +9,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     actions: {
       getAllTags: async () => {
         const response = await fetch(
-          `http://localhost:5000/api/causes/getAllCauses`
+          `${process.env.REACT_APP_API_URL}/api/causes/getAllCauses`
         );
         const data = await response.json();
         setStore({table_data: data})
@@ -18,7 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         try {
           if (criteria !== "") {
             const response = await fetch(
-              `http://localhost:5000/api/search/tag?name=${criteria}`
+              `${process.env.REACT_APP_API_URL}/api/search/tag?name=${criteria}`
             );
             const data = await response.json();
             setStore({ search_tags_result: data });
@@ -43,7 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       fetchPrices: async (name, slug, year) => {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/causes/findByTag?tagsArray=${slug}&year=${year}`
+            `${process.env.REACT_APP_API_URL}/api/causes/findByTag?tagsArray=${slug}&year=${year}`
           );
           const data = await res.json();
           setStore({
