@@ -14,7 +14,7 @@ export const SideBar = () => {
           md={6}
           className={`pt-2 ${
             tab === "favs"
-              ? "border-bottom border-end text-white bg-opacity-25 bg-secondary"
+              ? "border-bottom border-end text-white bg-deactivate"
               : ""
           }`}
         >
@@ -25,7 +25,7 @@ export const SideBar = () => {
           md={6}
           className={`pt-2 ${
             tab === "sickness"
-              ? "border-bottom border-end text-white bg-opacity-25 bg-secondary"
+              ? "border-bottom border-end text-white bg-deactivate"
               : ""
           }`}
         >

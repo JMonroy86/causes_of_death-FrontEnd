@@ -17,7 +17,7 @@ const injectContext = PassedComponent => {
 			})
 		);
 		useEffect(() => {
-			
+				state.actions.getAllTags()
 		}, []);
 
     return (

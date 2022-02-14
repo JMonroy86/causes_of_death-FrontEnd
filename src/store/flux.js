@@ -1,11 +1,20 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      table_data: null,
       search_tags_result: null,
       favorites: [],
       chartName: "",
     },
     actions: {
+      getAllTags: async () => {
+        const response = await fetch(
+          `http://localhost:5000/api/causes/getAllCauses`
+        );
+        const data = await response.json();
+        setStore({table_data: data})
+        console.log(data)
+      },
       searchTag: async (criteria) => {
         try {
           if (criteria !== "") {
