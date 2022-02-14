@@ -1,6 +1,7 @@
 const getState = ({ getStore, getActions, setStore }) => {
   return {
     store: {
+      db_data: null,
       table_data: null,
       search_tags_result: null,
       favorites: [],
@@ -77,6 +78,17 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error
         }
       },
+      poppulateData: async ()=> {
+        try {
+          const actions = getActions()
+          const response =await fetch(`${process.env.REACT_APP_API_URL}/api/causes/createData`)
+          const data = await response.json()
+          setStore({db_data: data.message})
+          await actions.getAllTags()
+        } catch (error) {
+          throw error
+        }
+      }
     },
   };
 };
