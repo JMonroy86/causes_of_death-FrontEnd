@@ -8,28 +8,33 @@ export const Favorites = () => {
   const [year, setYear] = useState(2014);
   return (
     <>
-      <Row>
-        <Col md={3} className="pb-5">
-          <div className="mb-2">
-            <h6 className="text-muted">Select year</h6>
-            <DropdownButton id="dropdown-basic-button" title={year}>
-              {years.map((year, i) => {
-                return (
-                  <Dropdown.Item
-                    eventKey={i}
-                    key={i}
-                    onClick={() => {
-                      setYear(year);
-                    }}
-                  >
-                    {year}
-                  </Dropdown.Item>
-                );
-              })}
-            </DropdownButton>
-          </div>
+      <Row className="mb-2 pb-5">
+        <Col md={4}>
+          <h6 className="text-muted">Select year</h6>
+        </Col>
+        <Col md={6}>
+          <DropdownButton
+            id="dropdown-variants-transparent"
+            variant="transparent"
+            title={year}
+          >
+            {years.map((year, i) => {
+              return (
+                <Dropdown.Item
+                  eventKey={i}
+                  key={i}
+                  onClick={() => {
+                    setYear(year);
+                  }}
+                >
+                  {year}
+                </Dropdown.Item>
+              );
+            })}
+          </DropdownButton>
         </Col>
       </Row>
+
       {store.favorites !== null ? (
         <>
           {store.favorites.map((tag) => {
@@ -42,7 +47,9 @@ export const Favorites = () => {
                 <Row>
                   <Col
                     md={10}
-                    onClick={() => actions.fetchPrices(tag.name, tag.slug, year)}
+                    onClick={() =>
+                      actions.fetchPrices(tag.name, tag.slug, year)
+                    }
                   >
                     {tag.name}
                   </Col>

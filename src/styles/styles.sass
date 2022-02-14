@@ -1,15 +1,31 @@
 body
   font-family: 'Roboto', sans-serif
-  
+
+::-webkit-scrollbar
+  width: 10px
+  height: 10px
+
+::-webkit-scrollbar-thumb
+  background: #babcbd
+  border: 1px solid #ffffff
+  border-radius: 8px
 
 .nav-title
   font-weight: bold
+  font-family: monospace
+  color: #86bbd8 !important
 
 .side-bar
-  min-height: 70vh
+  min-height: auto
   height: auto
+  overflow-y: auto
   position: relative
-  background-color: #f0efeffa
+  background-color: #fff
+  color: #2f4858
+  font-family: monospace
+
+.bg-deactivate
+  background-color: #2e6181
 
 .search-item-result:hover
   background-color: #cecccce0
@@ -17,8 +33,38 @@ body
   border: 1px solid #2ec6f5
 
 .chart
-  height: auto
+  height: 40%
+  background-color: #daf7dc
+
+.dropdown-menu
+  min-width: auto
+  font-size: 0.8rem
 
 .table
   height: 40vh
+  overflow-y: auto
 
+table
+  & thead
+    & tr
+      white-space: nowrap
+      background-color: #336699 !important
+      color: #fff !important
+      & th
+        font-size: 0.7rem
+        font-weight: 600
+        font-family: sans-serif
+
+.table-striped>tbody>tr:nth-of-type(odd)>*
+  background-color: #cce8f7 !important
+  font-weight: bold
+
+.table-bordered>:not(caption)>*>*
+  font-weight: bold
+
+  & tbody
+    & tr
+      & td
+        font-weight: bold !important
+        font-size: 0.8rem
+        font-family: monospace

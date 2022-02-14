@@ -1,7 +1,8 @@
 import { useContext } from "react";
-import { Col, Row } from "react-bootstrap";
+import { Col, Row, Table } from "react-bootstrap";
 import { DynamicChart } from "../components/chart";
 import { SideBar } from "../components/SideBar";
+import { Table_data } from "../components/table";
 import { Context } from "../store/appContext";
 
 export const Home = () => {
@@ -22,7 +23,7 @@ export const Home = () => {
               <DynamicChart />
             </Col>
             <Col md={12} className="table">
-              {/* <DynamicChart /> */}
+              <Table_data />
             </Col>
           </Row>
         </Col>
