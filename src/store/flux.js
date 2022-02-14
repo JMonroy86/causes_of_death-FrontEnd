@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           `${process.env.REACT_APP_API_URL}/api/causes/getAllCauses`
         );
         const data = await response.json();
-        setStore({table_data: data})
+        setStore({table_data: data,  db_data: "ok" })
       },
       searchTag: async (criteria) => {
         try {
@@ -22,7 +22,7 @@ const getState = ({ getStore, getActions, setStore }) => {
               `${process.env.REACT_APP_API_URL}/api/search/tag?name=${criteria}`
             );
             const data = await response.json();
-            setStore({ search_tags_result: data, db_data: "ok" });
+            setStore({ search_tags_result: data});
           } else {
             setStore({ search_tags_result: null });
           }
