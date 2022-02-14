@@ -16,7 +16,7 @@ export const NavBar = () => {
           Visor de causas de muertes EEUU
         </Navbar.Brand>
         {store.db_data === null && (
-          <Button onClick={() => actions.populateData()}>Click to start</Button>
+          <Button onClick={() => actions.poppulateData()}>Click to start</Button>
         )}
       </Container>
     </Navbar>

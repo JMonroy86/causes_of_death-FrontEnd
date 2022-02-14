@@ -78,7 +78,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           throw error
         }
       },
-      populateData: async ()=> {
+      poppulateData: async ()=> {
         try {
           const actions = getActions()
           const response =await fetch(`${process.env.REACT_APP_API_URL}/api/causes/createData`)
