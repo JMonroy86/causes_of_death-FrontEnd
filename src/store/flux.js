@@ -13,7 +13,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         );
         const data = await response.json();
         setStore({table_data: data})
-        console.log(data)
       },
       searchTag: async (criteria) => {
         try {
